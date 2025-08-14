@@ -8,13 +8,13 @@ OBJ  = ${SRC:.c=.o}
 
 .PHONY: all clean
 
-all: main
+all: horse
 
 %.o: %.c
 	${CC} -c -o $@ $< ${CFLAGS}
 
-main: ${OBJ}
+horse: ${OBJ}
 	${CC} -o $@ $^ ${CFLAGS} $(LDFLAGS)
 
 clean:
-	-rm -f main main.exe $(OBJ)
+	-rm -f horse horse.exe $(OBJ)
